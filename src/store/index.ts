@@ -6,10 +6,12 @@ import {
   TypedUseSelectorHook
 } from 'react-redux'
 import counterReducer from './modules/counter'
+import recommendReducer from '@/views/discovery/c-views/recommend/store'
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer
+    counter: counterReducer,
+    recommend: recommendReducer
   }
 })
 

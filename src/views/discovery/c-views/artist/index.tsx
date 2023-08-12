@@ -4,8 +4,8 @@ import type { FC, ReactNode } from 'react'
 interface IProps {
   children?: ReactNode
 }
-const artist: FC<IProps> = () => {
+const Artist: FC<IProps> = () => {
   return <div>artist</div>
 }
 
-export default memo(artist)
+export default memo(Artist)

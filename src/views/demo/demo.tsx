@@ -4,8 +4,8 @@ import type { FC, ReactNode } from 'react'
 interface IProps {
   children?: ReactNode
 }
-const template: FC<IProps> = () => {
-  return <div>template</div>
+const Template: FC<IProps> = () => {
+  return <div>Template</div>
 }
 
-export default memo(template)
+export default memo(Template)
