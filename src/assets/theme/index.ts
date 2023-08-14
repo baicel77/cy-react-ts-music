@@ -7,6 +7,12 @@ const theme = {
     //     box-shadow: 0 2px 4px rgba(0, 0, 0, .18);
     //   }
     // `
+    itemHover: `
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    `
   }
 }
 
