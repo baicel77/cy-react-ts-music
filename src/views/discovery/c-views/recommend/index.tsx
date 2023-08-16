@@ -8,6 +8,9 @@ import { getRecommendDataAction, getRankingDataAction } from './store'
 import HotRecommend from './c-cpns/hot-recommend'
 import NewAlbum from './c-cpns/new-album'
 import TopRanking from './c-cpns/top-ranking'
+import UserLogin from './c-cpns/user-login'
+import SettleSinger from './c-cpns/settle-singer'
+import HotAnchor from './c-cpns/hot-anchor'
 
 interface IProps {
   children?: ReactNode
@@ -25,13 +28,15 @@ const Recommend: FC<IProps> = () => {
     bannerList = [],
     hotRecommendList = [],
     newAlbumList = [],
-    rankingList = []
+    rankingList = [],
+    settleSingerList = []
   } = useAppSelector(
     (state) => ({
       bannerList: state.recommend.bannerList,
       hotRecommendList: state.recommend.hotRecommendList,
       newAlbumList: state.recommend.newAlbumList,
-      rankingList: state.recommend.rankingList
+      rankingList: state.recommend.rankingList,
+      settleSingerList: state.recommend.settleSingerList
     }),
     shallowEqualApp
   )
@@ -47,9 +52,20 @@ const Recommend: FC<IProps> = () => {
           {/* 新碟上架 */}
           {!!newAlbumList.length && <NewAlbum newAlbumList={newAlbumList} />}
           {/* 榜单 */}
-          {!!rankingList.length && <TopRanking rankingList={rankingList} />}
+          {!!rankingList.length && (
+            <TopRanking rankingList={rankingList.filter((item) => item)} />
+          )}
         </div>
-        <div className="recommend-right"></div>
+        <div className="recommend-right">
+          {/* 用户登录 */}
+          <UserLogin />
+          {/* 入驻歌手 */}
+          {!!settleSingerList.length && (
+            <SettleSinger settleSingerList={settleSingerList} />
+          )}
+          {/* 热门主播 */}
+          <HotAnchor />
+        </div>
       </div>
     </RecommendWrapper>
   )

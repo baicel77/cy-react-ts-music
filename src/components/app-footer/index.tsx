@@ -6,7 +6,7 @@ interface IProps {
   children?: ReactNode
 }
 const Footer: FC<IProps> = () => {
-  return <FooterWrapper>Footer</FooterWrapper>
+  return <FooterWrapper></FooterWrapper>
 }
 
 export default memo(Footer)

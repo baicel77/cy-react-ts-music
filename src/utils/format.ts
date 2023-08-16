@@ -13,3 +13,11 @@ export function formatImgSize(
 ) {
   return imgUrl + `?param=${width}y${height}`
 }
+
+export function formatTime(time: number) {
+  const secondTime = Math.floor(time / 1000)
+  const minute = String(Math.floor(secondTime / 60)).padStart(2, '0')
+  const second = String(Math.floor(secondTime) % 60).padStart(2, '0')
+
+  return `${minute}:${second}`
+}

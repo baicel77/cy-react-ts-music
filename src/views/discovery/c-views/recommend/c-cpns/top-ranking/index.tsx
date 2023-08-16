@@ -10,6 +10,7 @@ interface IProps {
 }
 const TopRanking: FC<IProps> = (props) => {
   const { rankingList } = props
+  console.log('rankingList', rankingList)
   return (
     <TopRankingWrapper>
       <AreaHeader titleName="榜单" moreLink="/discovery/ranking" />

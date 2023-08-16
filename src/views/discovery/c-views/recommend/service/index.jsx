@@ -29,3 +29,12 @@ export function getRanking(id) {
     }
   })
 }
+
+export function getSettleSinger(limit = 5) {
+  return cyRequest.get({
+    url: '/artist/list',
+    params: {
+      limit
+    }
+  })
+}

@@ -7,16 +7,18 @@ import {
 } from 'react-redux'
 import counterReducer from './modules/counter'
 import recommendReducer from '@/views/discovery/c-views/recommend/store'
+import playerReducer from '@/views/player/store'
 
 const store = configureStore({
   reducer: {
     counter: counterReducer,
-    recommend: recommendReducer
+    recommend: recommendReducer,
+    player: playerReducer
   }
 })
 
 const state = store.getState
-type stateReturnType = ReturnType<typeof state>
+export type stateReturnType = ReturnType<typeof state>
 type dispatchType = typeof store.dispatch
 
 export const useAppSelector: TypedUseSelectorHook<stateReturnType> = useSelector

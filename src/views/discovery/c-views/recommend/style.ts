@@ -4,7 +4,6 @@ export const RecommendWrapper = styled.div`
   .recommend-content {
     display: flex;
     background: url(${require('@/assets/img/wrap-bg.png')});
-    min-height: 1000px;
     border: 1px solid #d3d3d3;
     border-width: 0 1px;
     .recommend-left {
@@ -14,6 +13,8 @@ export const RecommendWrapper = styled.div`
     }
     .recommend-right {
       flex: 1;
+      padding-left: 1px;
+      overflow: hidden;
     }
   }
 `
